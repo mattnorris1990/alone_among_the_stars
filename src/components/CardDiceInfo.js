@@ -12,10 +12,21 @@ const NewPlanet = styled.button `
     padding: 3%;
     padding-left: 11%;
     padding-right: 11%;
-    border-radius: 30px;
+    border-radius: 30px 0 0 0;
     border: 10px #7eddca;
     border-style: solid none none solid;
     background-color: transparent;
+    transition-duration: 1s;
+    &:hover {
+        border: 10px #e39063;
+        border-style: solid none none solid;
+        transition-duration: 0.4s;
+    }
+    &:active {
+        border: 10px #e39063;
+        border-style: solid none none solid;
+        background-color: #e39063
+    }
 
 `
 

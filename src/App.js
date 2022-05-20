@@ -37,13 +37,20 @@ function App() {
     setNumber(result)
   }
 
+  const addJournalEntry = (entry) => {
+    const currentEntries = [...entries]
+    currentEntries.push(entry)
+
+    setEntries(currentEntries)
+  }
+
   
   
   return (
     <div className="App">
     
       <h1>Alone Among The Stars</h1>
-      <GameContainer deck={deck} card={card} number={number} fetchCard = {fetchCard} rollDice = {rollDice} />
+      <GameContainer deck={deck} card={card} number={number} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} />
 
     </div>
   );

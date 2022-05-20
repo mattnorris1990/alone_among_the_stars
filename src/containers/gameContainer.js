@@ -16,7 +16,7 @@ const JourneyDetails = styled.section`
     min-width: 30%;
 `
 
-const GameContainer = ({deck, number, card, fetchCard, rollDice}) => {
+const GameContainer = ({deck, number, card, fetchCard, rollDice, addJournalEntry}) => {
 
     return (
         <>
@@ -29,7 +29,7 @@ const GameContainer = ({deck, number, card, fetchCard, rollDice}) => {
                 </JourneyDetails>
 
                 <JourneyDetails>
-                    <JournalEntryForm/>
+                    <JournalEntryForm addJournalEntry = {addJournalEntry}/>
                     <JournalEntries/>
                 </JourneyDetails>
             </DetailsAndJournal>

@@ -1,11 +1,40 @@
-import React from "react"
+import React, {useState} from "react"
 
-const JournalEntryForm = () => {
+const JournalEntryForm = ({addJournalEntry}) => {
+    const [title, setTitle] = useState("")
+    const [entry, setEntry] = useState("")
+
+    const handleTitleChange = (event) => {
+        setTitle(event.target.value)
+
+    }
+
+    const handleEntryChange = (event) => {
+        setEntry(event.target.value)
+
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        addJournalEntry({"title": title, "entry": entry})
+        setTitle("")
+        setEntry("")
+        event.target.reset()
+    }
 
 
     return (
         <>
-            <h3>This is the JournalEntryForm component</h3>
+            <form onSubmit={handleSubmit} id="journal-entry-form">
+                <label>Entry title:</label>
+                    <input type="text" name="title" value={title.title} onChange={handleTitleChange}/>
+                
+                <label>Entry:
+                    <input type="textarea" name="entry" value={entry.textarea} onChange={handleEntryChange}/>
+                </label>
+                <input type="submit" value="submit"/>
+                
+            </form>
         </>
     )
 }
