@@ -1,4 +1,24 @@
 import React, {useState} from "react"
+import styled from "styled-components"
+
+const JournalForm = styled.form`
+    display: flex;
+    flex-direction: column;
+`
+
+const JInput = styled.input`
+    @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+    font-family: 'Nova Square', cursive;
+    width: 100%;
+    background-color: #101651;
+    border: 8px solid #7eddca;
+    border-radius: 20px;
+    color: white;
+    padding: 3%;
+`
+
+const JText = styled(JInput)`
+    height: 150px;`
 
 const JournalEntryForm = ({addJournalEntry}) => {
     const [title, setTitle] = useState("")
@@ -25,16 +45,22 @@ const JournalEntryForm = ({addJournalEntry}) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} id="journal-entry-form">
-                <label>Entry title:</label>
-                    <input type="text" name="title" value={title.title} onChange={handleTitleChange}/>
-                
-                <label>Entry:
-                    <input type="textarea" name="entry" value={entry.textarea} onChange={handleEntryChange}/>
+            <h3>Add Log Entry</h3>
+            <JournalForm onSubmit={handleSubmit} id="journal-entry-form">
+                <p>
+                <label>Entry title:
+                    <JInput type="text" name="title" value={title.title} onChange={handleTitleChange}/>
                 </label>
-                <input type="submit" value="submit"/>
-                
-            </form>
+                </p>
+                <p>
+                <label>Entry:
+                    <JText type="textarea" name="entry" value={entry.textarea} onChange={handleEntryChange}/>
+                </label>
+                </p>
+                <p>
+                    <input type="submit" value="submit"/>
+                </p>
+            </JournalForm>
         </>
     )
 }

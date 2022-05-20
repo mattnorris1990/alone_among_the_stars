@@ -2,7 +2,7 @@ import React from "react"
 import CardDiceInfo from "../components/CardDiceInfo"
 import TurnDetails from "../components/TurnDetails"
 import JournalEntryForm from "../components/JournalEntryForm"
-import JournalEntries from "../components/JounralEntries"
+import JournalEntries from "../components/JournalEntries"
 import styled from "styled-components"
 
 const DetailsAndJournal = styled.div`
@@ -16,7 +16,7 @@ const JourneyDetails = styled.section`
     min-width: 30%;
 `
 
-const GameContainer = ({deck, number, card, fetchCard, rollDice, addJournalEntry}) => {
+const GameContainer = ({deck, number, entries, card, fetchCard, rollDice, addJournalEntry, downloadLog}) => {
 
     return (
         <>
@@ -30,7 +30,8 @@ const GameContainer = ({deck, number, card, fetchCard, rollDice, addJournalEntry
 
                 <JourneyDetails>
                     <JournalEntryForm addJournalEntry = {addJournalEntry}/>
-                    <JournalEntries/>
+                    <JournalEntries entries={entries}/>
+                    
                 </JourneyDetails>
             </DetailsAndJournal>
         </>

@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+body {
+  background: rgb(175,100,170);
+  background-image: url("./assets/pixelstars.png"), linear-gradient(0deg, rgba(175,100,170,1) 0%, rgba(75,41,96,1) 11%, rgba(4,8,61,1) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: rgb(255, 238, 238);
+  font-family: 'Nova Square', cursive;
+  
+}
+
+h1, h2, h3 {
+font-family: 'Press Start 2P', cursive;
+}
 .App {
   text-align: center;
 }

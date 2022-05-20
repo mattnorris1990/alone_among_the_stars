@@ -4,7 +4,7 @@ const TurnDetails = ({number, card}) => {
     
     const journey = () => {
         if (number === 1 || number === 2) {
-            return "it wass arduous to get to"
+            return "it was arduous to get to"
         }
         else if
             (number === 3 || number === 4) {

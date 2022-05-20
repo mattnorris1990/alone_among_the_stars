@@ -43,14 +43,13 @@ function App() {
 
     setEntries(currentEntries)
   }
-
   
   
   return (
     <div className="App">
     
       <h1>Alone Among The Stars</h1>
-      <GameContainer deck={deck} card={card} number={number} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} />
+      <GameContainer deck={deck} card={card} number={number} entries = {entries} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} />
 
     </div>
   );
