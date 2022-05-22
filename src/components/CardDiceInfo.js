@@ -7,12 +7,25 @@ const Results = styled.div `
     display: flex;
     gap: 3vh;
 `
+const PlanetRes = styled.section`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3vh;
+    margin-bottom: 5%;
+    margin-top: 5%;
+
+`
+
 const NewPlanet = styled.button `
-    margin-bottom: 10%;
+    @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+    font-family: 'Nova Square', cursive;
+    color: white;
+    
     padding: 3%;
     padding-left: 11%;
     padding-right: 11%;
-    border-radius: 30px 0 0 0;
+    border-radius: 30px 0 20px 0;
     border: 10px #7eddca;
     border-style: solid none none solid;
     background-color: transparent;
@@ -39,11 +52,13 @@ const CardDiceInfo = ({card, number, fetchCard, rollDice}) => {
 
     return (
         <>
-            <NewPlanet onClick={handleClick}>Visit New Planet</NewPlanet>
-            <Results>
-                {card ? <CardInfo card = {card}/> : null}
-                {number ? <DiceInfo number = {number}/> : null}
-            </Results>
+            <PlanetRes>
+                <NewPlanet onClick={handleClick}>Visit New Planet</NewPlanet>
+                <Results>
+                    {card ? <CardInfo card = {card}/> : null}
+                    {number ? <DiceInfo number = {number}/> : null}
+                </Results>
+            </PlanetRes>
         </>
     )
 }

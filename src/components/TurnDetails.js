@@ -1,4 +1,18 @@
 import React from "react"
+import styled from "styled-components"
+
+const Info = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    width: 100%;
+    background-color: #101651;
+    border: 8px solid #7eddca;
+    border-radius: 20px;
+    color: white;
+    padding: 3%;
+
+`
 
 const TurnDetails = ({number, card}) => {
     
@@ -75,10 +89,15 @@ const TurnDetails = ({number, card}) => {
 
     return (
         <>
-            <h3>How did you discover something?</h3><p>{journey()}</p>
-            <h3>What did you encounter?</h3> <p>{suitReturn()}</p>
-            <h3>Where did this happen?</h3><p>{cardValueReturn()}</p>
-            
+            <Info>
+
+                    <h3>What did you encounter?</h3> <p>{suitReturn()}</p>
+
+                    <h3>How did you find it?</h3><p>{journey()}</p>
+
+                    <h3>Where did this happen?</h3><p>{cardValueReturn()}</p>
+
+            </Info>
         </>
     )
 }

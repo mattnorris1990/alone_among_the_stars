@@ -7,7 +7,7 @@ const CardInfo = ({card}) => {
         background: rgb(217,111,210);
         background: linear-gradient(0deg, rgba(217,111,210,1) 0%, rgba(112,66,178,1) 51%, rgba(37,44,131,1) 100%);
         overflow: hidden;
-        border: 3px solid #7eddca;
+        border: 7px solid #7eddca;
         border-radius: 10px;
     `
 

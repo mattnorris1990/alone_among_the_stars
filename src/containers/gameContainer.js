@@ -16,6 +16,14 @@ const JourneyDetails = styled.section`
     min-width: 30%;
 `
 
+const Log = styled.section`
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    
+`
+
+
 const GameContainer = ({deck, number, entries, card, fetchCard, rollDice, addJournalEntry, downloadLog}) => {
 
     return (
@@ -30,10 +38,12 @@ const GameContainer = ({deck, number, entries, card, fetchCard, rollDice, addJou
 
                 <JourneyDetails>
                     <JournalEntryForm addJournalEntry = {addJournalEntry}/>
-                    <JournalEntries entries={entries}/>
                     
                 </JourneyDetails>
             </DetailsAndJournal>
+            <Log>
+                <JournalEntries entries={entries}/>
+            </Log>
         </>
     )
 }

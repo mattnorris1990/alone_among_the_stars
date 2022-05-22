@@ -1,4 +1,9 @@
 import React from "react"
+import styled from "styled-components"
+
+const Entry = styled.div`
+    white-space: pre-wrap;
+`
 
 const JournalEntries = ({entries}) => {
 
@@ -7,7 +12,7 @@ const JournalEntries = ({entries}) => {
             <>
                 <h3>{entry.title}</h3>
                 <hr/>
-                <p>{entry.entry}</p>
+                <Entry>{entry.entry}</Entry>
             </>
         )
     })
