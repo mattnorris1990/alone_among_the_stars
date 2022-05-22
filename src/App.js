@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react"
 import './App.css';
 import GameContainer from "./containers/gameContainer";
+import Start from "./components/Start";
+
 
 function App() {
   
@@ -8,6 +10,9 @@ function App() {
   const [card, setCard] = useState(null)
   const [number, setNumber] = useState(null)
   const [entries, setEntries] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [name, setName] = useState(null)
+  const [shipName, setShipName] = useState(null)
 
   useEffect(() => {
     fetchDeck()
@@ -47,9 +52,10 @@ function App() {
   
   return (
     <div className="App">
-    
+
       <h1>Alone Among The Stars</h1>
-      <GameContainer deck={deck} card={card} number={number} entries = {entries} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} />
+      
+      {name ? <GameContainer deck={deck} card={card} number={number} entries = {entries} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} /> : <Start setName = {setName} setShipName = {setShipName}/> }
 
     </div>
   );
