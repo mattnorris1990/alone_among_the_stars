@@ -6,7 +6,7 @@ import Ship from "../assets/ship.gif"
 
 const Welcome = styled.section`
     
-    margin: 20vh;
+    margin: 27vh;
     margin-top: 5vh;
     margin-bottom: 5vh;
     display: flex;
@@ -43,6 +43,7 @@ const EnterNames = styled.form`
     display: flex;
     flex-direction: column;
     gap: 3vh;
+    text-align: left;
 `
 
 const JInput = styled.input`
@@ -96,8 +97,8 @@ const Start = ({setName, setShipName}) => {
                 </EnterNames>
             </Welcome>
             <Credit>
-                <p>based on Alone Among The Stars, a solo RPG by Takuma Okada - get it <a href="https://noroadhome.itch.io/">here.</a></p>
-                <p>Ship sprite by <a href="https://ansimuz.itch.io/">Ansimuz</a></p>
+                <p>A web-based version of Alone Among The Stars, a solo RPG by Takuma Okada - get it <a href="https://noroadhome.itch.io/" target="_blank">here.</a></p>
+                <p>Ship sprite by <a href="https://ansimuz.itch.io/" target="_blank">Ansimuz</a></p>
             </Credit>
         </>
     )

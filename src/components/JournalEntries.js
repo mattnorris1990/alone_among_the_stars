@@ -13,15 +13,35 @@ const Heading = styled.div`
     margin-top: 5vh;
 `
 
+const EntryContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    width: 100%;
+    background-color: #101651;
+    border: 8px solid #7eddca;
+    border-radius: 20px;
+    color: white;
+    padding: 3%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+`
+
+const EntryHeading = styled.h3`
+    text-align: left;
+`
+
 const JournalEntries = ({entries, shipName, name}) => {
 
     const entriesNodes = entries.map((entry, index)=> {
         return (
             <>
-                <h3>{entry.title}</h3>
-                <hr/>
-                <Entry>{entry.entry}</Entry>
-                <Submission>submitted by {name}</Submission>
+                <EntryContainer>
+                    <EntryHeading>{entry.title}</EntryHeading>
+                        <Entry>{entry.entry}</Entry>
+                        <Submission>submitted by {name}</Submission>
+                </EntryContainer>
             </>
         )
     })
@@ -44,7 +64,7 @@ const JournalEntries = ({entries, shipName, name}) => {
         let combined = []
         
         entries.map((entry) => {
-            let newEntry = `title: ${entry.title} \n \n  entry: ${entry.entry} \n \n`
+            let newEntry = `title: ${entry.title} \n \n entry: ${entry.entry} \n \n`
             combined.push(newEntry)
         })
 

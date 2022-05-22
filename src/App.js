@@ -2,8 +2,11 @@ import React, {useState, useEffect} from "react"
 import './App.css';
 import GameContainer from "./containers/gameContainer";
 import Start from "./components/Start";
+import styled from "styled-components"
 
-
+const GameTitle = styled.h1 `
+  margin-top: 5vh;
+`
 
 function App() {
   
@@ -49,7 +52,7 @@ function App() {
   return (
     <div className="App">
 
-      <h1>Alone Among The Stars</h1>
+      <GameTitle>Alone Among The Stars</GameTitle>
       
       {name ? <GameContainer deck={deck} card={card} number={number} entries = {entries} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} name = {name} shipName = {shipName} /> : <Start setName = {setName} setShipName = {setShipName}/> }
 
