@@ -17,32 +17,6 @@ const PlanetRes = styled.section`
 
 `
 
-const NewPlanet = styled.button `
-    @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-    font-family: 'Nova Square', cursive;
-    color: white;
-    
-    padding: 3%;
-    padding-left: 11%;
-    padding-right: 11%;
-    border-radius: 30px 0 20px 0;
-    border: 10px #7eddca;
-    border-style: solid none none solid;
-    background-color: transparent;
-    transition-duration: 1s;
-    &:hover {
-        border: 10px #e39063;
-        border-style: solid none none solid;
-        transition-duration: 0.4s;
-    }
-    &:active {
-        border: 10px #e39063;
-        border-style: solid none none solid;
-        background-color: #e39063
-    }
-
-`
-
 const CardDiceInfo = ({card, number, fetchCard, rollDice}) => {
 
     const handleClick = () => {
@@ -53,7 +27,7 @@ const CardDiceInfo = ({card, number, fetchCard, rollDice}) => {
     return (
         <>
             <PlanetRes>
-                <NewPlanet onClick={handleClick}>Visit New Planet</NewPlanet>
+                <button onClick={handleClick} className = "button">Visit New Planet</button>
                 <Results>
                     {card ? <CardInfo card = {card}/> : null}
                     {number ? <DiceInfo number = {number}/> : null}

@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import styled from "styled-components"
 import Rectangle from "../assets/rectangle.png"
+import Ship from "../assets/ship.gif"
 
 
 const Welcome = styled.section`
@@ -10,6 +11,7 @@ const Welcome = styled.section`
     margin-bottom: 5vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5vw;
     background-color: #101651;
     border: 8px solid #7eddca;
@@ -53,30 +55,6 @@ const JInput = styled.input`
     color: white;
     padding: 3%;
 `
-const SubmitButton = styled.button`
-    @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-    font-family: 'Nova Square', cursive;
-    color: white;
-    
-    padding: 3%;
-    padding-left: 11%;
-    padding-right: 11%;
-    border-radius: 30px 0 20px 0;
-    border: 10px #7eddca;
-    border-style: solid none none solid;
-    background-color: transparent;
-    transition-duration: 1s;
-    &:hover {
-        border: 10px #e39063;
-        border-style: solid none none solid;
-        transition-duration: 0.4s;
-    }
-    &:active {
-        border: 10px #e39063;
-        border-style: solid none none solid;
-        background-color: #e39063
-    }
-`
 
 const Start = ({setName, setShipName}) => {
     const [yourName, setYourName] = useState("")
@@ -100,11 +78,11 @@ const Start = ({setName, setShipName}) => {
     return (
         <>  
             <div class = "animate-ship">
-                <img src= {Rectangle} class="ship"/>  
+                <img src= {Ship} class="ship"/>  
             </div>
             <Welcome>
                 <Intro>
-                    <p>You are a solitary adventurer, hopping from planet to planet exploring. Each world has unique features for you to discover and record. They are represented by cards from a standard deck, placed face down.</p>
+                    <p>You are a solitary adventurer, hopping from planet to planet exploring. Each world has unique features for you to discover and record.</p>
                 </Intro>
                 <EnterNames onSubmit={handleSubmit}>
                     <label>Your Name:
@@ -114,11 +92,12 @@ const Start = ({setName, setShipName}) => {
                     <label>Your Ship's Name:
                         <JInput type="text" name="name" value={yourShipName.name} onChange={handleShipNameChange} required/>
                     </label>
-                    <SubmitButton type="submit" value="submit">Submit</SubmitButton>
+                    <input type="submit" value="submit" className="button"/>
                 </EnterNames>
             </Welcome>
             <Credit>
                 <p>based on Alone Among The Stars, a solo RPG by Takuma Okada - get it <a href="https://noroadhome.itch.io/">here.</a></p>
+                <p>Ship sprite by <a href="https://ansimuz.itch.io/">Ansimuz</a></p>
             </Credit>
         </>
     )
