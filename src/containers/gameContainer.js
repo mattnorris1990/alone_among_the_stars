@@ -24,7 +24,7 @@ const Log = styled.section`
 `
 
 
-const GameContainer = ({deck, number, entries, card, fetchCard, rollDice, addJournalEntry, downloadLog}) => {
+const GameContainer = ({deck, number, entries, card, fetchCard, rollDice, addJournalEntry, downloadLog, name, shipName}) => {
 
     return (
         <>
@@ -42,7 +42,7 @@ const GameContainer = ({deck, number, entries, card, fetchCard, rollDice, addJou
                 </JourneyDetails>
             </DetailsAndJournal>
             <Log>
-                <JournalEntries entries={entries}/>
+                <JournalEntries entries={entries} shipName = {shipName} name = {name}/>
             </Log>
         </>
     )

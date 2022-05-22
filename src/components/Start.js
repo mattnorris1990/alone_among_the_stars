@@ -1,9 +1,12 @@
 import React, {useState} from "react"
 import styled from "styled-components"
+import Rectangle from "../assets/rectangle.png"
 
 
 const Welcome = styled.section`
+    
     margin: 20vh;
+    margin-top: 5vh;
     margin-bottom: 5vh;
     display: flex;
     justify-content: center;
@@ -95,7 +98,10 @@ const Start = ({setName, setShipName}) => {
     }
 
     return (
-        <>
+        <>  
+            <div class = "animate-ship">
+                <img src= {Rectangle} class="ship"/>  
+            </div>
             <Welcome>
                 <Intro>
                     <p>You are a solitary adventurer, hopping from planet to planet exploring. Each world has unique features for you to discover and record. They are represented by cards from a standard deck, placed face down.</p>

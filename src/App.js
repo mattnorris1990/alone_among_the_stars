@@ -4,23 +4,19 @@ import GameContainer from "./containers/gameContainer";
 import Start from "./components/Start";
 
 
+
 function App() {
   
   const [deck, setDeck] = useState([])
   const [card, setCard] = useState(null)
   const [number, setNumber] = useState(null)
   const [entries, setEntries] = useState([])
-  const [isModalOpen, setIsModalOpen] = useState(true)
   const [name, setName] = useState(null)
   const [shipName, setShipName] = useState(null)
 
   useEffect(() => {
     fetchDeck()
   }, [])
-
-  // useEffect(()=> {
-  //   fetchCard()
-  // }, [deck])
 
   const fetchDeck = () => {
     fetch("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
@@ -55,7 +51,7 @@ function App() {
 
       <h1>Alone Among The Stars</h1>
       
-      {name ? <GameContainer deck={deck} card={card} number={number} entries = {entries} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} /> : <Start setName = {setName} setShipName = {setShipName}/> }
+      {name ? <GameContainer deck={deck} card={card} number={number} entries = {entries} fetchCard = {fetchCard} rollDice = {rollDice} addJournalEntry = {addJournalEntry} name = {name} shipName = {shipName} /> : <Start setName = {setName} setShipName = {setShipName}/> }
 
     </div>
   );
